@@ -111,7 +111,7 @@
         /* 侧边栏底部 GitHub 链接 */
         .sidebar-footer {
             padding: 12px 16px;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
             background: rgba(255,255,255,0.03);
         }
 
@@ -439,10 +439,6 @@
                 <button class="filter-btn" data-category="auto">🏎️ 汽车</button>
             </div>
 
-            <div class="brand-list" id="brandList">
-                <!-- 品牌列表将由 JS 动态生成 -->
-            </div>
-
             <div class="sidebar-footer">
                 <a href="https://github.com/GrewRabbit/awesome-design-preview" target="_blank" class="github-link">
                     <svg viewBox="0 0 16 16">
@@ -450,6 +446,10 @@
                     </svg>
                     访问 GitHub 仓库
                 </a>
+            </div>
+
+            <div class="brand-list" id="brandList">
+                <!-- 品牌列表将由 JS 动态生成 -->
             </div>
         </aside>
 
