@@ -194,12 +194,13 @@
             font-weight: 600;
         }
 
-        .tag-vibrant { background: rgba(255,99,132,0.2); color: #ff6384; }
-        .tag-modern { background: rgba(54,162,235,0.2); color: #36a2eb; }
-        .tag-minimal { background: rgba(75,192,192,0.2); color: #4bc0c0; }
-        .tag-luxury { background: rgba(255,206,86,0.2); color: #ffce56; }
-        .tag-tech { background: rgba(153,102,255,0.2); color: #9966ff; }
-        .tag-warm { background: rgba(255,159,64,0.2); color: #ff9f40; }
+        .tag-ai { background: rgba(168, 85, 247, 0.2); color: #c084fc; }
+        .tag-dev { background: rgba(59, 130, 246, 0.2); color: #60a5fa; }
+        .tag-infra { background: rgba(34, 197, 94, 0.2); color: #4ade80; }
+        .tag-design { background: rgba(236, 72, 153, 0.2); color: #f472b6; }
+        .tag-fintech { background: rgba(245, 158, 11, 0.2); color: #fbbf24; }
+        .tag-enterprise { background: rgba(99, 102, 241, 0.2); color: #818cf8; }
+        .tag-auto { background: rgba(239, 68, 68, 0.2); color: #f87171; }
 
         /* 主内容区 */
         .main-content {
@@ -384,11 +385,13 @@
 
             <div class="category-filter">
                 <button class="filter-btn active" data-category="all">全部</button>
-                <button class="filter-btn" data-category="vibrant">🌈 多彩</button>
-                <button class="filter-btn" data-category="modern">⚡ 现代</button>
-                <button class="filter-btn" data-category="minimal">⬜ 极简</button>
-                <button class="filter-btn" data-category="tech">💻 科技</button>
-                <button class="filter-btn" data-category="luxury">🏎️ 奢华</button>
+                <button class="filter-btn" data-category="ai">🤖 AI</button>
+                <button class="filter-btn" data-category="dev">💻 开发者</button>
+                <button class="filter-btn" data-category="infra">☁️ 云原生</button>
+                <button class="filter-btn" data-category="design">🎨 设计</button>
+                <button class="filter-btn" data-category="fintech">💰 金融</button>
+                <button class="filter-btn" data-category="enterprise">🏢 企业</button>
+                <button class="filter-btn" data-category="auto">🏎️ 汽车</button>
             </div>
 
             <div class="brand-list" id="brandList">
@@ -432,81 +435,79 @@
     </div>
 
     <script>
-        // 品牌数据
+        // 品牌数据 - 按官方分类
         const brands = [
-            // 多彩渐变风格
-            { name: 'Figma', category: 'vibrant', colors: ['#a259ff', '#ff7262', '#1abcfe', '#0acf83'], desc: '多彩渐变，紫色主调，创意工具风格', tags: ['vibrant', 'modern'] },
-            { name: 'Zapier', category: 'vibrant', colors: ['#ff4f00', '#ffbf00'], desc: '温暖橙色，奶油画布背景', tags: ['warm', 'vibrant'] },
-            { name: 'Together AI', category: 'vibrant', colors: ['#ef2cc1', '#6366f1', '#fbbf24'], desc: '粉彩渐变，柔和现代，AI科技感', tags: ['modern', 'vibrant'] },
-            { name: 'Sentry', category: 'vibrant', colors: ['#362d59', '#c2ef4e', '#ff6b6b'], desc: '深紫+青柠绿+珊瑚粉，高对比活力', tags: ['vibrant', 'tech'] },
-            { name: 'Sanity', category: 'vibrant', colors: ['#0052ef', '#f36458', '#00d9a3'], desc: '电光蓝+珊瑚红+霓虹绿，大胆撞色', tags: ['vibrant', 'modern'] },
-            { name: 'Airbnb', category: 'vibrant', colors: ['#ff385c', '#00a699', '#fc642d'], desc: 'Rausch红+温暖摄影，旅游平台风格', tags: ['warm', 'vibrant'] },
-            { name: 'Raycast', category: 'vibrant', colors: ['#ff6363', '#ffaa5c', '#ff6b9d'], desc: '红色主调+多色强调，开发者工具', tags: ['vibrant', 'tech'] },
-            { name: 'Pinterest', category: 'vibrant', colors: ['#e60023', '#cc0000'], desc: '标志性红色，视觉发现平台', tags: ['vibrant', 'warm'] },
-            { name: 'PostHog', category: 'vibrant', colors: ['#f54e00', '#8fa393'], desc: '鼠尾草绿+隐藏橙色，产品分析', tags: ['warm', 'tech'] },
-            { name: 'Replicate', category: 'vibrant', colors: ['#ff6b35', '#f7931e', '#ec4899'], desc: '橙红洋红渐变，AI创意工具', tags: ['vibrant', 'modern'] },
+            // 1. AI 与机器学习 (12个)
+            { name: 'Claude', category: 'ai', colors: ['#d97757', '#8b5cf6'], desc: 'Anthropic 的 AI 助手。温暖赤陶色调，简洁编辑式布局', tags: ['ai'] },
+            { name: 'Cohere', category: 'ai', colors: ['#6b46c1', '#3b82f6'], desc: '企业级 AI 平台。活力渐变，数据丰富的仪表盘美学', tags: ['ai'] },
+            { name: 'ElevenLabs', category: 'ai', colors: ['#000', '#fff'], desc: 'AI 语音平台。深色电影感 UI，音频波形美学', tags: ['ai'] },
+            { name: 'Minimax', category: 'ai', colors: ['#1a1a2e', '#6366f1'], desc: 'AI 模型提供商。大胆深色界面，霓虹点缀', tags: ['ai'] },
+            { name: 'Mistral AI', category: 'ai', colors: ['#d4a574', '#6366f1'], desc: '开源权重 LLM 提供商。法式工程极简主义，紫色调', tags: ['ai'] },
+            { name: 'Ollama', category: 'ai', colors: ['#ff6b6b', '#ffd93d'], desc: '本地运行 LLM。终端优先，单色简约', tags: ['ai'] },
+            { name: 'OpenCode AI', category: 'ai', colors: ['#00a4e4', '#10b981'], desc: 'AI 编码平台。开发者中心深色主题', tags: ['ai'] },
+            { name: 'Replicate', category: 'ai', colors: ['#ff6b35', '#f7931e', '#ec4899'], desc: '通过 API 运行 ML 模型。橙红洋红渐变', tags: ['ai'] },
+            { name: 'RunwayML', category: 'ai', colors: ['#000', '#fff'], desc: 'AI 视频生成。电影感深色 UI，媒体丰富布局', tags: ['ai'] },
+            { name: 'Together AI', category: 'ai', colors: ['#ef2cc1', '#6366f1', '#fbbf24'], desc: '开源 AI 基础设施。技术感，蓝图风格设计', tags: ['ai'] },
+            { name: 'VoltAgent', category: 'ai', colors: ['#00d992', '#0a0a0a'], desc: 'AI 代理框架。虚空黑画布，翡翠绿点缀，终端原生', tags: ['ai'] },
+            { name: 'xAI', category: 'ai', colors: ['#000', '#fff'], desc: '马斯克的 AI 实验室。极简单色，未来主义极简', tags: ['ai'] },
             
-            // 高对比现代风格
-            { name: 'Framer', category: 'modern', colors: ['#000', '#0099ff', '#fff'], desc: 'Framer蓝+纯黑虚空，设计师最爱', tags: ['modern', 'minimal'] },
-            { name: 'Spotify', category: 'modern', colors: ['#1ed760', '#191414'], desc: 'Spotify绿+纯黑，音乐活力', tags: ['vibrant', 'modern'] },
-            { name: 'Apple', category: 'minimal', colors: ['#000', '#f5f5f7', '#0071e3'], desc: '纯黑纯白交替，Apple蓝强调', tags: ['minimal', 'modern'] },
-            { name: 'Uber', category: 'minimal', colors: ['#000', '#fff'], desc: '纯黑白二元，无中间色调', tags: ['minimal', 'modern'] },
-            { name: 'Cal.com', category: 'minimal', colors: ['#242424', '#fff'], desc: '纯灰度，Cal Sans字体特色', tags: ['minimal', 'modern'] },
-            { name: 'xAI', category: 'tech', colors: ['#000', '#fff'], desc: '野兽派风格，纯黑白无色彩', tags: ['minimal', 'tech'] },
-            { name: 'ElevenLabs', category: 'tech', colors: ['#000', '#fff'], desc: '深黑+亮白，AI语音现代感', tags: ['minimal', 'tech'] },
-            { name: 'Expo', category: 'tech', colors: ['#000', '#fff', '#4630eb'], desc: '纯黑白+蓝色强调，开发工具', tags: ['minimal', 'tech'] },
+            // 2. 开发者工具与平台 (14个)
+            { name: 'Cursor', category: 'dev', colors: ['#0071e3', '#1a1a1a'], desc: 'AI 优先代码编辑器。流畅深色界面，渐变点缀', tags: ['dev'] },
+            { name: 'Expo', category: 'dev', colors: ['#000', '#fff', '#4630eb'], desc: 'React Native 平台。深色主题，紧凑字距，代码中心', tags: ['dev'] },
+            { name: 'Linear', category: 'dev', colors: ['#5e6ad2', '#8b5cf6'], desc: '工程师项目管理。极致极简，精准，紫色点缀', tags: ['dev'] },
+            { name: 'Lovable', category: 'dev', colors: ['#ff9f87', '#c4b5fd'], desc: 'AI 全栈构建器。趣味渐变，友好开发者美学', tags: ['dev'] },
+            { name: 'Mintlify', category: 'dev', colors: ['#00d9a3', '#0f172a'], desc: '文档平台。简洁，绿色点缀，阅读优化', tags: ['dev'] },
+            { name: 'PostHog', category: 'dev', colors: ['#f54e00', '#8fa393'], desc: '产品分析。趣味刺猬品牌，开发者友好深色 UI', tags: ['dev'] },
+            { name: 'Raycast', category: 'dev', colors: ['#ff6363', '#ffaa5c', '#ff6b9d'], desc: '效率启动器。流畅深色外壳，活力渐变点缀', tags: ['dev'] },
+            { name: 'Resend', category: 'dev', colors: ['#ff6b6b', '#4ade80', '#60a5fa'], desc: '开发者邮件 API。极简深色主题，等宽字体点缀', tags: ['dev'] },
+            { name: 'Sentry', category: 'dev', colors: ['#362d59', '#c2ef4e', '#ff6b6b'], desc: '错误监控。深色仪表盘，数据密集，粉紫点缀', tags: ['dev'] },
+            { name: 'Supabase', category: 'dev', colors: ['#3ecf8e', '#1c1c1c'], desc: '开源 Firebase 替代品。深色翡翠主题，代码优先', tags: ['dev'] },
+            { name: 'Superhuman', category: 'dev', colors: ['#1b1938', '#cbb7fb'], desc: '快速邮件客户端。高端深色 UI，键盘优先，紫色光晕', tags: ['dev'] },
+            { name: 'Vercel', category: 'dev', colors: ['#000', '#ff4d4d', '#0066ff'], desc: '前端部署平台。黑白精准，Geist 字体', tags: ['dev'] },
+            { name: 'Warp', category: 'dev', colors: ['#1a1a2e', '#f4e4c1'], desc: '现代终端。深色 IDE 风界面，块状命令 UI', tags: ['dev'] },
+            { name: 'Zapier', category: 'dev', colors: ['#ff4f00', '#ffbf00'], desc: '自动化平台。温暖橙色，友好插画驱动', tags: ['dev'] },
             
-            // 紫色系科技风格
-            { name: 'Stripe', category: 'tech', colors: ['#533afd', '#ff6b6b', '#00d4aa'], desc: '深紫+红宝石渐变，金融科技高端', tags: ['vibrant', 'modern'] },
-            { name: 'Linear', category: 'tech', colors: ['#5e6ad2', '#8b5cf6'], desc: '品牌靛蓝+紫罗兰，极简任务管理', tags: ['minimal', 'tech'] },
-            { name: 'Cohere', category: 'tech', colors: ['#6b46c1', '#3b82f6'], desc: '深紫区域+交互蓝，企业AI', tags: ['tech', 'modern'] },
-            { name: 'Superhuman', category: 'luxury', colors: ['#1b1938', '#cbb7fb'], desc: '深紫渐变+薰衣草，奢华邮件', tags: ['luxury', 'modern'] },
-            { name: 'Revolut', category: 'tech', colors: ['#494fdf', '#00d4aa', '#ff6b6b'], desc: 'Revolut蓝+丰富语义色，金融科技', tags: ['vibrant', 'tech'] },
-            { name: 'HashiCorp', category: 'tech', colors: ['#7c3aed', '#14b8a6'], desc: '深紫+青绿，云基础设施', tags: ['tech', 'minimal'] },
-            { name: 'Mistral AI', category: 'tech', colors: ['#d4a574', '#6366f1'], desc: '暖沙色+靛蓝强调，法国AI', tags: ['warm', 'tech'] },
-            { name: 'Claude', category: 'tech', colors: ['#d97757', '#8b5cf6'], desc: '温暖橙+紫色，Anthropic AI', tags: ['warm', 'tech'] },
+            // 3. 基础设施与云服务 (6个)
+            { name: 'ClickHouse', category: 'infra', colors: ['#0066cc', '#ffcc00'], desc: '高速分析数据库。黄色点缀，技术文档风格', tags: ['infra'] },
+            { name: 'Composio', category: 'infra', colors: ['#00a4e4', '#10b981'], desc: '工具集成平台。现代深色，多彩集成图标', tags: ['infra'] },
+            { name: 'HashiCorp', category: 'infra', colors: ['#7c3aed', '#14b8a6'], desc: '基础设施自动化。企业级整洁，黑白配色', tags: ['infra'] },
+            { name: 'MongoDB', category: 'infra', colors: ['#00ed64', '#001e2b'], desc: '文档数据库。绿叶品牌，开发者文档焦点', tags: ['infra'] },
+            { name: 'Sanity', category: 'infra', colors: ['#0052ef', '#f36458', '#00d9a3'], desc: '无头 CMS。红色点缀，内容优先编辑式布局', tags: ['infra'] },
+            { name: 'Stripe', category: 'infra', colors: ['#533afd', '#ff6b6b', '#00d4aa'], desc: '支付基础设施。标志性紫色渐变，weight-300 优雅', tags: ['infra'] },
             
-            // 绿色系清新风格
-            { name: 'Wise', category: 'vibrant', colors: ['#9fe870', '#00b9ff'], desc: 'Wise绿+青柠强调，金融科技', tags: ['vibrant', 'modern'] },
-            { name: 'Supabase', category: 'tech', colors: ['#3ecf8e', '#1c1c1c'], desc: '翡翠绿+深色主题，开源数据库', tags: ['vibrant', 'tech'] },
-            { name: 'VoltAgent', category: 'tech', colors: ['#00d992', '#0a0a0a'], desc: '翡翠信号绿，开发者工具', tags: ['vibrant', 'tech'] },
-            { name: 'Mintlify', category: 'tech', colors: ['#00d9a3', '#0f172a'], desc: '薄荷绿+深色主题，文档平台', tags: ['vibrant', 'tech'] },
-            { name: 'NVIDIA', category: 'tech', colors: ['#76b900', '#1a1a1a'], desc: 'NVIDIA绿+深色，GPU科技', tags: ['tech', 'modern'] },
-            { name: 'Opencode', category: 'tech', colors: ['#00a4e4', '#10b981'], desc: '蓝绿渐变，AI编程助手', tags: ['tech', 'modern'] },
+            // 4. 设计与效率 (10个)
+            { name: 'Airtable', category: 'design', colors: ['#1b61c9', '#181d26'], desc: '电子表格-数据库混合体。多彩友好，结构化数据美学', tags: ['design'] },
+            { name: 'Cal.com', category: 'design', colors: ['#242424', '#fff'], desc: '开源日程安排。简洁中性 UI，开发者导向简约', tags: ['design'] },
+            { name: 'Clay', category: 'design', colors: ['#00a4e4', '#f5f5f5'], desc: '创意机构。有机形态，柔和渐变，艺术指导布局', tags: ['design'] },
+            { name: 'Figma', category: 'design', colors: ['#a259ff', '#ff7262', '#1abcfe', '#0acf83'], desc: '协作设计工具。活力多彩，趣味而专业', tags: ['design'] },
+            { name: 'Framer', category: 'design', colors: ['#000', '#0099ff', '#fff'], desc: '网站构建器。大胆黑蓝，动效优先，设计导向', tags: ['design'] },
+            { name: 'Intercom', category: 'design', colors: ['#1f8ded', '#00b2a9'], desc: '客户消息。友好蓝色调，对话式 UI 模式', tags: ['design'] },
+            { name: 'Miro', category: 'design', colors: ['#ff6b00', '#ffd02f', '#f4f4f4'], desc: '可视化协作。明亮黄色点缀，无限画布美学', tags: ['design'] },
+            { name: 'Notion', category: 'design', colors: ['#000', '#f5f5f5', '#ff6b6b', '#ffd93d'], desc: '一站式工作空间。温暖极简，衬线标题，柔和表面', tags: ['design'] },
+            { name: 'Pinterest', category: 'design', colors: ['#e60023', '#cc0000'], desc: '视觉发现平台。红色点缀，瀑布流网格，图片优先', tags: ['design'] },
+            { name: 'Webflow', category: 'design', colors: ['#146ef5', '#ff6b6b', '#ffd93d'], desc: '可视化网页构建器。蓝色点缀，精致营销站点美学', tags: ['design'] },
             
-            // 蓝色系专业风格
-            { name: 'Webflow', category: 'vibrant', colors: ['#146ef5', '#ff6b6b', '#ffd93d'], desc: 'Webflow蓝+多色辅助，网站构建', tags: ['vibrant', 'modern'] },
-            { name: 'Airtable', category: 'tech', colors: ['#1b61c9', '#181d26'], desc: '深海军蓝+Airtable蓝，数据库工具', tags: ['tech', 'modern'] },
-            { name: 'Vercel', category: 'minimal', colors: ['#000', '#ff4d4d', '#0066ff'], desc: '工作流强调色，部署平台', tags: ['minimal', 'tech'] },
-            { name: 'IBM', category: 'tech', colors: ['#0f62fe', '#161616'], desc: 'IBM蓝，经典企业级设计', tags: ['tech', 'minimal'] },
-            { name: 'Coinbase', category: 'tech', colors: ['#0052cc', '#1652f0'], desc: '蓝色系，加密货币平台', tags: ['tech', 'modern'] },
-            { name: 'BMW', category: 'luxury', colors: ['#1c69d4', '#262626'], desc: 'BMW蓝+工业几何，汽车品牌', tags: ['luxury', 'minimal'] },
-            { name: 'Cursor', category: 'tech', colors: ['#0071e3', '#1a1a1a'], desc: '蓝色强调，AI代码编辑器', tags: ['tech', 'modern'] },
-            { name: 'ClickHouse', category: 'tech', colors: ['#0066cc', '#ffcc00'], desc: '蓝黄对比，数据库技术', tags: ['tech', 'vibrant'] },
+            // 5. 金融科技与加密货币 (4个)
+            { name: 'Coinbase', category: 'fintech', colors: ['#0052cc', '#1652f0'], desc: '加密货币交易所。简洁蓝色标识，信任导向，机构感', tags: ['fintech'] },
+            { name: 'Kraken', category: 'fintech', colors: ['#5741d9', '#00d4aa'], desc: '加密货币交易平台。紫色点缀深色 UI，数据密集仪表盘', tags: ['fintech'] },
+            { name: 'Revolut', category: 'fintech', colors: ['#494fdf', '#00d4aa', '#ff6b6b'], desc: '数字银行。流畅深色界面，渐变卡片，金融科技精准', tags: ['fintech'] },
+            { name: 'Wise', category: 'fintech', colors: ['#9fe870', '#00b9ff'], desc: '国际汇款。明亮绿色点缀，友好清晰', tags: ['fintech'] },
             
-            // 奢华品牌风格
-            { name: 'Ferrari', category: 'luxury', colors: ['#ff0000', '#000', '#ffd700'], desc: '法拉利红+金色跃马，赛车传奇', tags: ['luxury', 'vibrant'] },
-            { name: 'Renault', category: 'luxury', colors: ['#efdf00', '#000'], desc: '雷诺黄+极光渐变，法国汽车', tags: ['vibrant', 'luxury'] },
-            { name: 'Lamborghini', category: 'luxury', colors: ['#1c69d4', '#000', '#ffd700'], desc: '蓝色+金色公牛，超级跑车', tags: ['luxury', 'vibrant'] },
-            { name: 'Tesla', category: 'luxury', colors: ['#3e6ae1', '#fff', '#000'], desc: '电光蓝+摄影优先，电动车', tags: ['minimal', 'tech'] },
+            // 6. 企业与消费 (7个)
+            { name: 'Airbnb', category: 'enterprise', colors: ['#ff385c', '#00a699', '#fc642d'], desc: '旅行市场。温暖珊瑚色点缀，摄影驱动，圆润 UI', tags: ['enterprise'] },
+            { name: 'Apple', category: 'enterprise', colors: ['#000', '#f5f5f7', '#0071e3'], desc: '消费电子。高端留白，SF Pro 字体，电影感影像', tags: ['enterprise'] },
+            { name: 'IBM', category: 'enterprise', colors: ['#0f62fe', '#161616'], desc: '企业技术。Carbon 设计系统，结构化蓝色调', tags: ['enterprise'] },
+            { name: 'NVIDIA', category: 'enterprise', colors: ['#76b900', '#1a1a1a'], desc: 'GPU 计算。绿黑能量，技术力量美学', tags: ['enterprise'] },
+            { name: 'SpaceX', category: 'enterprise', colors: ['#000', '#fff', '#005288'], desc: '航天技术。极简黑白，全出血影像，未来感', tags: ['enterprise'] },
+            { name: 'Spotify', category: 'enterprise', colors: ['#1ed760', '#191414'], desc: '音乐流媒体。深色上活力绿色，大胆字体，专辑封面驱动', tags: ['enterprise'] },
+            { name: 'Uber', category: 'enterprise', colors: ['#000', '#fff'], desc: '出行平台。大胆黑白，紧凑字体，都市能量', tags: ['enterprise'] },
             
-            // 协作工具风格
-            { name: 'Notion', category: 'minimal', colors: ['#000', '#f5f5f5', '#ff6b6b', '#ffd93d'], desc: '黑白+红黄蓝绿强调，笔记工具', tags: ['minimal', 'modern'] },
-            { name: 'Miro', category: 'vibrant', colors: ['#ff6b00', '#ffd02f', '#f4f4f4'], desc: '多色便签系统，协作白板', tags: ['vibrant', 'warm'] },
-            { name: 'Intercom', category: 'modern', colors: ['#1f8ded', '#00b2a9'], desc: '蓝绿渐变，客户沟通平台', tags: ['modern', 'tech'] },
-            { name: 'Clay', category: 'modern', colors: ['#00a4e4', '#f5f5f5'], desc: '蓝色强调，关系管理平台', tags: ['modern', 'minimal'] },
-            { name: 'Composio', category: 'tech', colors: ['#00a4e4', '#10b981'], desc: '蓝绿配色，AI工具集成', tags: ['tech', 'modern'] },
-            { name: 'Kraken', category: 'vibrant', colors: ['#5741d9', '#00d4aa'], desc: '紫绿对比，加密货币交易所', tags: ['vibrant', 'tech'] },
-            
-            // 其他特色风格
-            { name: 'SpaceX', category: 'tech', colors: ['#000', '#fff', '#005288'], desc: '黑白+SpaceX蓝，航天科技', tags: ['tech', 'minimal'] },
-            { name: 'Warp', category: 'tech', colors: ['#1a1a2e', '#f4e4c1'], desc: '暖色深色主题+羊皮纸文字', tags: ['warm', 'tech'] },
-            { name: 'Runway', category: 'minimal', colors: ['#000', '#fff'], desc: '全出血摄影，电影感AI', tags: ['minimal', 'modern'] },
-            { name: 'Resend', category: 'vibrant', colors: ['#ff6b6b', '#4ade80', '#60a5fa'], desc: '多色强调系统，邮件服务', tags: ['vibrant', 'modern'] },
-            { name: 'Ollama', category: 'warm', colors: ['#ff6b6b', '#ffd93d'], desc: '温暖渐变，本地AI模型', tags: ['warm', 'tech'] },
-            { name: 'MongoDB', category: 'vibrant', colors: ['#00ed64', '#001e2b'], desc: '亮绿+深绿，文档数据库', tags: ['vibrant', 'tech'] },
-            { name: 'Minimax', category: 'tech', colors: ['#1a1a2e', '#6366f1'], desc: '深色+紫色，中国AI', tags: ['tech', 'modern'] },
-            { name: 'Lovable', category: 'warm', colors: ['#ff9f87', '#c4b5fd'], desc: '暖桃色+薰衣草，开发工具', tags: ['warm', 'modern'] }
+            // 7. 汽车品牌 (5个)
+            { name: 'BMW', category: 'auto', colors: ['#1c69d4', '#262626'], desc: '豪华汽车。深色高端表面，精准德系工程美学', tags: ['auto'] },
+            { name: 'Ferrari', category: 'auto', colors: ['#ff0000', '#000', '#ffd700'], desc: '豪华汽车。明暗对比黑白编辑风，法拉利红配极致稀疏', tags: ['auto'] },
+            { name: 'Lamborghini', category: 'auto', colors: ['#1c69d4', '#000', '#ffd700'], desc: '豪华汽车。纯黑教堂感，金色点缀，LamboType 定制新 grotesk 体', tags: ['auto'] },
+            { name: 'Renault', category: 'auto', colors: ['#efdf00', '#000'], desc: '法国汽车。鲜明极光渐变，NouvelR 专有字体，零圆角按钮', tags: ['auto'] },
+            { name: 'Tesla', category: 'auto', colors: ['#3e6ae1', '#fff', '#000'], desc: '电动汽车。极致减法，电影感全视口摄影，Universal Sans 字体', tags: ['auto'] }
         ];
 
         let currentBrand = null;
@@ -554,12 +555,13 @@
 
         function getTagLabel(tag) {
             const labels = {
-                vibrant: '鲜活',
-                modern: '现代',
-                minimal: '极简',
-                luxury: '奢华',
-                tech: '科技',
-                warm: '温暖'
+                ai: 'AI',
+                dev: '开发者',
+                infra: '云原生',
+                design: '设计',
+                fintech: '金融',
+                enterprise: '企业',
+                auto: '汽车'
             };
             return labels[tag] || tag;
         }
